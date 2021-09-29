@@ -8,12 +8,27 @@ All through USSD (Unstructured Supplementary Service Data) short codes like `*14
 
 ## Development
 This project is part of ongoing  Bridging TradFi and DeFi [hackathon](https://gitcoin.co/hackathon/harmony-defi/projects/9607/ussd-one/summary/)
-1. ### USSD application (WIP)
-This is the dapp portion should drive all the user actions through interactive menu on the phone. USSD application will be hosted by mobile provider. Still work in progress.
 
-2. ### Smart Contracts(WIP)
-Smart contracts will be deployed on the Harmony Testnet. Users will interact with the
-smart contracts from the ussd application. Still work in progress.
+# set up
+1. run the ussd app under `ussd/app`
+-install dependencies:
+`npm install`
+`npm start` # to start the backend server
+ 
+2. Deploy `ussd.py` and register callback url with ussd app provisioned by provider
+or a provider like https://africastalking.com/
+
+3. Access the application through the simulator(see demo video)
+  -create a wallet
+  - send ONE
+  - check wallet balance
+
+1. ### USSD application 
+This is the dapp portion should drive all the user actions through interactive menu on the phone. USSD application is currently hosted by https://africastalking.com/ and is 
+runnable through an "in-page" simulator.
+
+2. ### Smart Contracts
+Smart contracts are be deployed on the Harmony Testnet and users can interact with the Smart contract throught the ussde application
 
 ## Demo video
 Be sure to checkout the demo video of how the final dApp should work, here [demo](https://www.youtube.com/watch?v=j4f1lZXuISY&t=1s&ab_channel=NaftaliMurgor)
