@@ -4,7 +4,7 @@ Monorepo for ussd-one dapp that serves to Allow Harmony One blockchain users to:
 2. Check  balance
 3. Make Payments
 4. Send ONE(Native "currency" for the Harmony blockchain network)
-All through USSD (Unstructured Supplementary Service Data) short codes like `*144*` etc on their phone application.
+All through USSD (Unstructured Supplementary Service Data) short codes like `*144#` etc on their phone application.
 
 ## Development
 This project is part of ongoing  Bridging TradFi and DeFi [hackathon](https://gitcoin.co/hackathon/harmony-defi/projects/9607/ussd-one/summary/)
