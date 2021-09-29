@@ -1,6 +1,9 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const mnemonic = '<ADD-YOUR-MNEMONIC-HERE>';
-const privateKeyTest = '<ADD-YOUR-PRIVATE-KEY-HERE>';
+const dotenv = require('dotenv')
+
+dotenv.config()
+const mnemonic = process.env.MNEMONIC;
+const privateKeyTest = process.env.PRIVATE_KEY;
 
 module.exports = {
   networks: {
