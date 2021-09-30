@@ -24,7 +24,7 @@ or a provider like https://africastalking.com/
   - check wallet balance
 
 
-1. ### USSD application 
+1. ### USSD application (wip)
 This is the dapp portion should drive all the user actions through interactive menu on the phone. USSD application is currently hosted by https://africastalking.com/ and is 
 runnable through an "in-page" simulator.
 
