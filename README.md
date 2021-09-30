@@ -18,10 +18,11 @@ This project is part of ongoing  Bridging TradFi and DeFi [hackathon](https://gi
 2. Deploy `ussd.py` and register callback url with ussd app provisioned by provider
 or a provider like https://africastalking.com/
 
-3. Access the application through the simulator(see demo video)
+3. Access the application through the simulator(see demo video). Functionalities provided include:
   -create a wallet
   - send ONE
   - check wallet balance
+
 
 1. ### USSD application 
 This is the dapp portion should drive all the user actions through interactive menu on the phone. USSD application is currently hosted by https://africastalking.com/ and is 
