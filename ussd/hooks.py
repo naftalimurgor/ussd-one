@@ -10,5 +10,5 @@ def send_one(amount, to_number, pin):
     res = requests.post(url="http://51.210.198.194:3000/send-one", data=json.dumps(tx_data))
     
 def get_balance(phone_number):
-    res = requests.post(url=f"http://51.210.198.194:3000/get_balance?phone={phone_number}", json=json.dumps(account_data))
+    res = requests.post(url=f"http://51.210.198.194:3000/get_balance?phone={phone_number}", data=json.dumps(account_data))
     
