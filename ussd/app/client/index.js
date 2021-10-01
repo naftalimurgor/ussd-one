@@ -1,8 +1,7 @@
 class Client {
- 
   web3
   contractInstance
-  
+
   constructor(contractInstance, web3) {
     this.contractInstance = contractInstance
     this.web3 = web3 
@@ -11,6 +10,7 @@ class Client {
   createAccount = async (phoneNumber, pin) => {
     try {
       const addressExists = (await this._getAddress(phoneNumber)) ? true : false
+      console.log(addressExists);
       if (addressExists) {
         throw new Error('Failed, try again')
       }
@@ -60,8 +60,8 @@ class Client {
       } else {
         return null
       }
-    } catch (e) {
-      return new Error(err.message)
+    } catch (err) {
+      throw new Error(err.message)
     }
   }
 
@@ -69,8 +69,8 @@ class Client {
     try {
       const address = await this.contractInstance.methods.getAccountAddress(phoneNumber).call()
       return address
-    } catch (e) {
-      return new Error(err.message)
+    } catch (err) {
+      throw new Error(err.message)
     }
   }
 

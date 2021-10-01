@@ -7,15 +7,15 @@ module.exports = class USSDAPP {
   }
 
   createWallet = () => {
-    return this.router.post('/create-wallet', async (req, res) => {
+    return this.router.post('/account', async (req, res) => {
       const phone = req.body.phone
       const pin = req.body.pin
-
+      console.log('hello world')
       try {
-        if (pin && phone) {
-          throw new Error('One or more fiels is empty')
+        if (!pin && !phone) {
+          throw new Error('One or more fields is empty')
         }
-        const wallet = await this.client.createWallet(phone)
+        const wallet = await this.client.createWallet(phone, pin)
         return res.json({ msg: 'success' })
       } catch (e) {
         return res.json({ msg: 'failed' }).status(401)
@@ -24,9 +24,9 @@ module.exports = class USSDAPP {
   }
 
   getBalance = () => {
-    return this.router.get('/get-balance', async (req, res) => {
+    return this.router.get('/balance', async (req, res) => {
       const phone = req.params.phone
-      // query the blockchain for balance
+      console.log(req);
       if (phone) {
         const balance = await this.client.getBalance(phone)
         return res.json({ message: 'success', balance })
@@ -36,9 +36,9 @@ module.exports = class USSDAPP {
   }
 
   sendOne = () => {
-    return this.router.post('/send-one', async (req, res) => {
-      const toPhoneNumber = req.body.toPhoneNumber
-      const fromPhoneNumber = req.body.fromPhoneNumber
+    return this.router.post('/send', async (req, res) => {
+      const toPhoneNumber = req.body.to
+      const fromPhoneNumber = req.body.from
       const amount = req.body.amount
       const pin = req.body.pin
       try {
